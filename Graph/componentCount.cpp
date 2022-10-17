@@ -1,28 +1,22 @@
-#include<bits/stdc++.h>
-
+#include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define mod 100000007
 const int N = 2e5;
 vector<int> graph[N];
 int vis[N];
-void bfs(int src){
-    queue<int>q;
-    q.push(src);
-    vis[src]=1;
-    while (!q.empty())
+
+void dfs(int u)
+{
+    vis[u] = 1;
+    for (auto v : graph[u])
     {
-        int u=q.front();
-        q.pop();
-        for(auto v: graph[u]){
-            if(!vis[v]){
-                q.push(v);
-                vis[v]=1;
-            }
+        if (vis[v] == 0)
+        {
+            dfs(v);
         }
     }
-    
 }
+
 int main()
 {
     int n, e;
@@ -40,6 +34,16 @@ int main()
         graph[a].push_back(b);
         graph[b].push_back(a); // remove if directed graph
     }
-    
-    bfs(1);
+    // Calling DFS function from a node
+    int cnt=0;
+    for (int i = 1; i <=n; i++)
+    {
+        if(vis[i]==0){
+            dfs(i);
+            cnt++;
+        }
+    }
+    cout<<"Number of Component: "<<cnt<<endl;
+
+
 }

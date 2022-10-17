@@ -1,0 +1,1 @@
+{"name":"Local: componentCount","url":"e:\\Prog\\Data Structure and Algorithms\\Graph\\componentCount.cpp","tests":[{"id":1665983494351,"input":"5 3\n1 2\n2 3\n4 5\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Prog\\Data Structure and Algorithms\\Graph\\componentCount.cpp","group":"local","local":true}
