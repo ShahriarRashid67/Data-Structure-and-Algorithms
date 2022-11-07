@@ -21,7 +21,7 @@ int dist[1000], pr[1000];
 
 void Dijkstra(int src)
 {
-    /// memset the dist array with inf
+    /// memset the dist array with i
     for (int i = 0; i < 1000; i++)
         dist[i] = INT_MAX / 2;
     /// push the src with 0 cost in our priority queue
